@@ -28,9 +28,11 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - ./docker/mysql:/docker-entrypoint-initdb.d
+      - my-datavolume:/var/lib/mysql
     networks:
       - autoescola
+    ports:
+      - 3306:3306
 
   nginx:
     image: nginx:alpine
@@ -47,3 +49,6 @@ services:
 networks:
   autoescola:
     driver: bridge
+
+volumes:
+  my-datavolume:
