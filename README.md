@@ -42,3 +42,10 @@
 
 ### Para iniciar posteriormente:
 - docker-compose up -d
+
+
+### Para exportar o banco de dados após alterações
+- docker-compose exec db bash
+- mysqldump -u root -psecret autoescola > exportedDatabase.sql
+- docker cp 492b5529c6a1:/exportedDatabase.sql /home/jonas/Projetos/autoescola/autoescola/docker/mysql/db_init.sql
+

@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminCarrosController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminMotosController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -25,7 +25,7 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "carros";
+			$this->table = "motos";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
@@ -34,6 +34,7 @@
 			$this->col[] = ["label"=>"Marca","name"=>"marca"];
 			$this->col[] = ["label"=>"Cor","name"=>"cor"];
 			$this->col[] = ["label"=>"Ano","name"=>"ano"];
+			$this->col[] = ["label"=>"Potencia","name"=>"potencia"];
 			$this->col[] = ["label"=>"Placa","name"=>"placa"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
@@ -43,6 +44,7 @@
 			$this->form[] = ['label'=>'Marca','name'=>'marca','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Cor','name'=>'cor','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Ano','name'=>'ano','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Potencia','name'=>'potencia','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Placa','name'=>'placa','type'=>'text','validation'=>'max:10','width'=>'col-sm-9'];
 			# END FORM DO NOT REMOVE THIS LINE
 
@@ -52,6 +54,7 @@
 			//$this->form[] = ['label'=>'Marca','name'=>'marca','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Cor','name'=>'cor','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Ano','name'=>'ano','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Potencia','name'=>'potencia','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/* 

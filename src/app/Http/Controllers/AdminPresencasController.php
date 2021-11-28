@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminCarrosController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminPresencasController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -25,33 +25,24 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "carros";
+			$this->table = "presencas";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Modelo","name"=>"modelo"];
-			$this->col[] = ["label"=>"Marca","name"=>"marca"];
-			$this->col[] = ["label"=>"Cor","name"=>"cor"];
-			$this->col[] = ["label"=>"Ano","name"=>"ano"];
-			$this->col[] = ["label"=>"Placa","name"=>"placa"];
+			$this->col[] = ["label"=>"Aulas Id","name"=>"aulas_id","join"=>"aulas,id"];
+			$this->col[] = ["label"=>"Presente","name"=>"presente"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Modelo','name'=>'modelo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Marca','name'=>'marca','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Cor','name'=>'cor','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Ano','name'=>'ano','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Placa','name'=>'placa','type'=>'text','validation'=>'max:10','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Aulas Id','name'=>'aulas_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'aulas,id'];
+			$this->form[] = ['label'=>'Presente','name'=>'presente','type'=>'radio','validation'=>'required','width'=>'col-sm-9','dataenum'=>'Sim;Nao'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Modelo','name'=>'modelo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Marca','name'=>'marca','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Cor','name'=>'cor','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Ano','name'=>'ano','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Aulas Id','name'=>'aulas_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'aulas,id'];
 			# OLD END FORM
 
 			/* 

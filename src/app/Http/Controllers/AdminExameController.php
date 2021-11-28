@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminCarrosController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminExameController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -25,33 +25,34 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "carros";
+			$this->table = "exame";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Modelo","name"=>"modelo"];
-			$this->col[] = ["label"=>"Marca","name"=>"marca"];
-			$this->col[] = ["label"=>"Cor","name"=>"cor"];
-			$this->col[] = ["label"=>"Ano","name"=>"ano"];
-			$this->col[] = ["label"=>"Placa","name"=>"placa"];
+			$this->col[] = ["label"=>"Tipo","name"=>"tipo"];
+			$this->col[] = ["label"=>"Data","name"=>"data"];
+			$this->col[] = ["label"=>"Horario","name"=>"horario"];
+			$this->col[] = ["label"=>"Endereco","name"=>"endereco"];
+			$this->col[] = ["label"=>"Aluno Id","name"=>"alunos_id","join"=>"alunos,id"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Modelo','name'=>'modelo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Marca','name'=>'marca','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Cor','name'=>'cor','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Ano','name'=>'ano','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Placa','name'=>'placa','type'=>'text','validation'=>'max:10','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Tipo','name'=>'tipo','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Prático;Teórico'];
+			$this->form[] = ['label'=>'Data','name'=>'data','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Horario','name'=>'horario','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Endereco','name'=>'endereco','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Aluno Id','name'=>'alunos_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'alunos,id'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Modelo','name'=>'modelo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Marca','name'=>'marca','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Cor','name'=>'cor','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Ano','name'=>'ano','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Tipo','name'=>'tipo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Data','name'=>'data','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Horario','name'=>'horario','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Endereco','name'=>'endereco','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Alunos Id','name'=>'alunos_id','type'=>'sel$this->form[] =ect2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'alunos,id'];
 			# OLD END FORM
 
 			/* 
