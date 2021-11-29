@@ -18,6 +18,7 @@
 
 ### Entre no terminal do container app e execute:
  - docker-compose exec -u root app bash
+ - chown -R www-data:www-data /var/www
  - composer update
  - composer i
  - php artisan key:generate
@@ -49,3 +50,5 @@
 - mysqldump -u root -psecret autoescola > exportedDatabase.sql
 - docker cp 492b5529c6a1:/exportedDatabase.sql /home/jonas/Projetos/autoescola/autoescola/docker/mysql/db_init.sql
 
+### Para importar...
+mysql -u autoescola -psecret autoescola < ./docker-entrypoint-initdb.d/db_init.sql
