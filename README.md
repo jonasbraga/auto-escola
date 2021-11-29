@@ -17,7 +17,7 @@
  - docker-compose build && docker-compose up -d
 
 ### Entre no terminal do container app e execute:
- - docker-compose exec app bash
+ - docker-compose exec -u root app bash
  - composer update
  - composer i
  - php artisan key:generate

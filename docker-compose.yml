@@ -7,6 +7,7 @@ services:
         uid: 1000
       context: ./docker/app
       dockerfile: Dockerfile
+    user: root
     image: travellist
     container_name: autoescola-app
     restart: unless-stopped
@@ -28,6 +29,7 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
+      - ./docker/mysql:/docker-entrypoint-initdb.d
       - my-datavolume:/var/lib/mysql
     networks:
       - autoescola
