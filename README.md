@@ -29,6 +29,10 @@
  - Para sair do container:
    - exit
 
+### Para importar o banco de dados
+- docker-compose exec db bash
+- mysql -u autoescola -psecret autoescola < ./docker-entrypoint-initdb.d/db_init.sql
+
 ### Acesse http://localhost:8000/
   >
     Login: admin@crudbooster.com
@@ -49,6 +53,3 @@
 - docker-compose exec db bash
 - mysqldump -u root -psecret autoescola > exportedDatabase.sql
 - docker cp 492b5529c6a1:/exportedDatabase.sql /home/jonas/Projetos/autoescola/autoescola/docker/mysql/db_init.sql
-
-### Para importar...
-mysql -u autoescola -psecret autoescola < ./docker-entrypoint-initdb.d/db_init.sql
