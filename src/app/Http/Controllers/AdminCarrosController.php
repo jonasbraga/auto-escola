@@ -140,6 +140,7 @@
 	        |
 	        */
 	        $this->index_statistic = array();
+			$this->index_statistic[] = ['label'=>ucfirst($this->table),'count'=>DB::table($this->table)->count(),'icon'=>'fa fa-check','color'=>'success'];
 
 
 
